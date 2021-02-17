@@ -3,8 +3,9 @@ from parking_lot import ParkingLot
 from car import Car
 
 class Execution:
-    def __init__(self, capacity):
-        self.spots = Slots(capacity)
+    def __init__(self, capacity, charge = 0):
+        self.charge = charge
+        self.spots = Slots(capacity, self.charge)
         self.parking = ParkingLot()
 
     

@@ -4,6 +4,7 @@ class DisplayOutput:
             return True
         
         return False
+        
     
     def check_start(self, start):
         start = start.split()
@@ -21,3 +22,27 @@ class DisplayOutput:
                 return False
         
         return int(start[1])
+    
+
+    def check_money(self, money):
+        if money == "YES" or money == "NO":
+            return True
+        
+        return False
+    
+
+    def check_count(self, count):
+        if count == "YES" or count == "NO":
+            return True
+        
+        return False
+    
+    def check_amount(self, amount):
+        for i in range(len(amount)):
+            if 48 <= ord(amount[i]) <= 57:
+                continue
+
+            else:
+                return False
+        
+        return True

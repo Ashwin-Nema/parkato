@@ -4,6 +4,47 @@ from execution import Execution
 from slots import Slots
 from display_output import DisplayOutput
 
+screen = DisplayOutput()
+
+print("Do you want to earn money through your your parking lot?")
+print()
+print("If yes, then type YES")
+print()
+print("If not, then type NO")
+print()
+money = input()
+print()
+
+if screen.check_money(money):
+    if money == "YES":
+        print("Enter amount you want to charge each customer:", end = " ")
+        amount = input()
+        check_amount = screen.check_amount(amount)
+        if check_amount:
+            amount = int(amount)
+            print()
+
+        else:
+            print("Invalid Input")
+            print()
+
+
+else:
+    print("Invalid Input")
+    print()
+
+print("Do you want to know how many cars were parked in your parking lot?")
+print()
+print("If yes, then type YES")
+print()
+print("If not, then type NO")
+print()
+count = input()
+print()
+
+if not(screen.check_count(count)):
+    print("Invalid Input")
+    print()
 
 print("Please select the mode of input") 
 
@@ -20,7 +61,7 @@ mode = input()
 
 print()
 
-screen = DisplayOutput()
+
 
 if not(screen.check_mode(mode)):
     print("Invalid Input")
@@ -38,7 +79,12 @@ if mode == "1":
         print(f"Created a parking lot with {start} slots")
         print()
 
-        user = Execution(start)
+        if money == "YES" and check_amount:
+            user = Execution(start, amount)
+        
+        else:
+            user = Execution(start)
+
 
         while command != "exit":
             command = input().strip()
@@ -59,6 +105,17 @@ if mode == "1":
                     print(*enter, sep = ", ")
 
                 print()
+            
+        print()
+        if money == "YES" and check_amount:
+            print("Total income = ", end="")
+            print(user.spots.income)
+            print()
+        
+        if count == "YES":
+            print("Total number of vehicles that were parked in the parking lot = ", end="")
+            print(user.spots.count)
+        
 
 elif mode == "2":
     print("Please enter the source of file:", end=" ")
@@ -78,8 +135,13 @@ elif mode == "2":
             
             else:
                 print(f"Created a parking lot with {start} slots")
+
+
+                if money == "YES" and check_amount:
+                    user = Execution(start, amount)
                 
-                user = Execution(start)
+                else:
+                    user = Execution(start)
 
             output += 1
         
@@ -100,3 +162,12 @@ elif mode == "2":
                 print(*enter, sep = ", ")
 
     file.close()
+    print()
+    if money == "YES" and check_amount:
+        print("Total income = ", end="")
+        print(user.spots.income)
+        print()
+    
+    if count == "YES":
+        print("Total number of vehicles that were parked in the parking lot = ", end="")
+        print(user.spots.count)
