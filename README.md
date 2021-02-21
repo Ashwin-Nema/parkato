@@ -1,5 +1,6 @@
 # PARKATO
 
+
 Parkato is a program that helps the user in maintaining the record of the parking lot. Through this program, a user can keep the track of all the vehicles entering and leaving the lot, their slot numbers, and registration numbers. Vehicles in this parking lot are always parked in the slots allocated to the vehicle owners. At the exit, the vehicle owner returns the ticket which then marks the slot they were using as being available.  
 
 Additional features of Parkato
