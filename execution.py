@@ -1,7 +1,7 @@
-from slots import Slots
 from parking_lot import ParkingLot
 from car import Car
 from error_check import ErrorCheck
+from slots import Slots
 
 
 class Execution:

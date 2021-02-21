@@ -1,4 +1,5 @@
-from errorcheck import ErrorCheck
+from error_check import ErrorCheck
+
 from execution import Execution
 
 
