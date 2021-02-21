@@ -23,6 +23,9 @@ Step 2:
 Type these commands in the terminal
 ```bash
 git clone https://github.com/attainu/python-project-ashwin-nema-au16.git
+```
+
+```bash
 cd python-project-ashwin-nema-au16/
 ```
 
